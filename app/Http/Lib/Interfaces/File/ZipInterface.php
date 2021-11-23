@@ -4,5 +4,5 @@ namespace App\Http\Lib\Interfaces\File;
 
 interface ZipInterface
 {
-    public function zip($path,$name,$directory);
+    public function zip($path,$name,$disk);
 }

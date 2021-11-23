@@ -11,14 +11,14 @@ use ZipArchive;
 class ZipDirectory implements ZipInterface
 {
 
-    public function zip($path,$name,$directory)
+    public function zip($path,$name,$disk)
     {
         if(!Storage::exists($path)){
             return false;
         }
         $rootPath =Storage::path($path);
         $zip = new ZipArchive();
-        $zip->open(Storage::path($directory).'/'.$name . '.zip', ZipArchive::CREATE | ZipArchive::OVERWRITE);
+        $zip->open(Storage::disk($disk)->path($path).'/'.$name . '.zip', ZipArchive::CREATE | ZipArchive::OVERWRITE);
         $files = new RecursiveIteratorIterator(
             new RecursiveDirectoryIterator($rootPath),
             RecursiveIteratorIterator::LEAVES_ONLY

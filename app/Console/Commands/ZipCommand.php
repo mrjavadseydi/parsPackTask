@@ -44,7 +44,7 @@ class ZipCommand extends Command
             print("i need a real username! \n");
             return Command::FAILURE;
         }
-        if (!$this->zip->zip($username,date('Y-m-d'),$username)) {
+        if (!$this->zip->zip($username,date('Y-m-d'),'myProgram')) {
             print("there is a problem ! the user must exists\n ");
             return Command::FAILURE;
         }else{
