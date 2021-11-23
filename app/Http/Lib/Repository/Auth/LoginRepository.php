@@ -11,11 +11,11 @@ class LoginRepository implements LoginInterface
 
     public function Login($username, $password)
     {
-        $user = User::where([['username',$username],['password',$password]])->first();
+        $user = User::where('username',$username)->first();
         if(!$user || !Hash::check($password,$user->password)){
             return response([
                 'status'=>false,
-                'message'=>'invalid email or password'
+                'message'=>'invalid username or password'
             ],401);
         }else{
             $token = $user->createToken('appToken')->plainTextToken;
