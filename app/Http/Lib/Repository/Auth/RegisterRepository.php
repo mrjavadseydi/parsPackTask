@@ -3,6 +3,7 @@
 namespace App\Http\Lib\Repository\Auth;
 
 use App\Http\Lib\Interfaces\Auth\RegisterInterface;
+use App\Jobs\CreateUserDirectoryJob;
 use App\Models\User;
 
 class RegisterRepository implements RegisterInterface
@@ -14,6 +15,7 @@ class RegisterRepository implements RegisterInterface
             'password'=>bcrypt($password)
         ]);
         $token = $user->createToken("appToken")->plainTextToken;
+        CreateUserDirectoryJob::dispatch($username);
         $response = [
             'status'=>true,
             'message'=>'registered successfully!',
