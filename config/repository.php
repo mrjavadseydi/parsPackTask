@@ -7,4 +7,5 @@ return [
     \App\Http\Lib\Interfaces\File\DirectoryInterface::class=>\App\Http\Lib\Repository\File\DirectoryRepository::class,
     \App\Http\Lib\Interfaces\File\DirectoryListInterface::class=>\App\Http\Lib\Repository\File\DirectoryListRepository::class,
     \App\Http\Lib\Interfaces\File\FileInterface::class=>\App\Http\Lib\Repository\File\FileRepository::class,
+    \App\Http\Lib\Interfaces\File\FileListInterface::class=>\App\Http\Lib\Repository\File\FileListRepository::class,
 ];
