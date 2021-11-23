@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\api\AuthController;
+use App\Http\Controllers\api\ProcessesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,4 +20,5 @@ Route::post("/login",[AuthController::class,'login']);
 ///protected routes
 Route::group(['middleware'=>['auth:sanctum']],function(){
     Route::post("/logout",[AuthController::class,'logout']);
+    Route::post('/processes',[ProcessesController::class,'getProcesses']);
 });
