@@ -57,6 +57,10 @@ return [
             'driver' => 'local',
             'root' => '/opt/myprogram/',
         ],
+        'backup' => [
+            'driver' => 'local',
+            'root' => '/opt/backup/',
+        ],
     ],
 
     /*
