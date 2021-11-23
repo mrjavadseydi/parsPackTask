@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\api\AuthController;
+use App\Http\Controllers\api\FileController ;
 use App\Http\Controllers\api\ProcessesController;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\api\DirectoryController;
@@ -23,4 +24,5 @@ Route::group(['middleware'=>['auth:sanctum']],function(){
     Route::post('/processes',[ProcessesController::class,'getProcesses']);
     Route::post('/create-directory',[DirectoryController::class,'createDirectory']);
     Route::post('/directory-list',[DirectoryController::class,'directoryList']);
+    Route::post('/create-file',[FileController::class,'createFile']);
 });
