@@ -25,4 +25,5 @@ Route::group(['middleware'=>['auth:sanctum']],function(){
     Route::post('/create-directory',[DirectoryController::class,'createDirectory']);
     Route::post('/directory-list',[DirectoryController::class,'directoryList']);
     Route::post('/create-file',[FileController::class,'createFile']);
+    Route::post('/file-list',[FileController::class,'fileList']);
 });
