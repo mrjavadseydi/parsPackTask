@@ -22,4 +22,5 @@ Route::group(['middleware'=>['auth:sanctum']],function(){
     Route::post("/logout",[AuthController::class,'logout']);
     Route::post('/processes',[ProcessesController::class,'getProcesses']);
     Route::post('/create-directory',[DirectoryController::class,'createDirectory']);
+    Route::post('/directory-list',[DirectoryController::class,'directoryList']);
 });
