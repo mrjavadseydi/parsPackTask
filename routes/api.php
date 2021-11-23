@@ -3,7 +3,7 @@
 use App\Http\Controllers\api\AuthController;
 use App\Http\Controllers\api\ProcessesController;
 use Illuminate\Support\Facades\Route;
-
+use \App\Http\Controllers\api\DirectoryController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,4 +21,5 @@ Route::post("/login",[AuthController::class,'login']);
 Route::group(['middleware'=>['auth:sanctum']],function(){
     Route::post("/logout",[AuthController::class,'logout']);
     Route::post('/processes',[ProcessesController::class,'getProcesses']);
+    Route::post('/create-directory',[DirectoryController::class,'createDirectory']);
 });
