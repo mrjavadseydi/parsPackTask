@@ -28,6 +28,9 @@ class ZipDirectory implements ZipInterface
                 $filePath = $file->getRealPath();
                 $relativePath = substr($filePath, strlen($rootPath) + 1);
                 $zip->addFile($filePath, $relativePath);
+            }else {
+                if($relativePath !== false)
+                    $zip->addEmptyDir($relativePath);
             }
         }
         $zip->close();
